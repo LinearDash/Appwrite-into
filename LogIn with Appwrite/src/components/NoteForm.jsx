@@ -1,4 +1,3 @@
-import React from "react";
 import db from "../appwrite/databases";
 
 function NoteForm({ setNote }) {
@@ -18,7 +17,7 @@ function NoteForm({ setNote }) {
     }
   };
   return (
-    <form onSubmit={handelAdd}>
+    <form onSubmit={handelAdd} id="todo-form">
       <input type="text" name="body" placeholder="Add a task" />
     </form>
   );

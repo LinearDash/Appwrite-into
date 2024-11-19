@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import db from "../appwrite/databases";
+import { useState } from "react";
 import DeleteIcon from "../assets/DeleteIcon";
 
 function Note({ setNotes, NoteData }) {
@@ -17,8 +17,8 @@ function Note({ setNotes, NoteData }) {
     setNotes((prevState) => prevState.filter((i) => i.$id !== note.$id));
   };
   return (
-    <div>
-      <span onClick={handelUpdate}>
+    <div className="note-wrapper">
+      <span className="note-body" onClick={handelUpdate}>
         {note.complete ? <s>{note.body}</s> : <>{note.body}</>}
       </span>
       <div onClick={handelDel}>

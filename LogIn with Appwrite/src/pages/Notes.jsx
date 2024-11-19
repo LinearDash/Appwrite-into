@@ -21,6 +21,7 @@ function Notes() {
       <div>
         <h1>✍️ My Todo List</h1>
       </div>
+
       <NoteForm setNote={setNote} />
       <div>
         {notes.map((note) => (
