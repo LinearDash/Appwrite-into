@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import db from "../../appwrite/databases";
-import NoteForm from "../../components/NoteForm";
+import db from "../appwrite/databases";
+import NoteForm from "../components/NoteForm";
 import { Query } from "appwrite";
-import Note from "../../components/Note";
+import Note from "../components/Note";
 
 function Notes() {
   const [notes, setNote] = useState([]);
@@ -17,14 +17,17 @@ function Notes() {
   };
 
   return (
-    <div>
+    <>
+      <div>
+        <h1>✍️ My Todo List</h1>
+      </div>
       <NoteForm setNote={setNote} />
       <div>
         {notes.map((note) => (
           <Note key={note.$id} setNotes={setNote} NoteData={note} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
